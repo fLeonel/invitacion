@@ -5,7 +5,16 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Heart, Sparkles, Star, MapPin, MessageCircle } from "lucide-react";
+import {
+  Heart,
+  Sparkles,
+  Star,
+  MapPin,
+  MessageCircle,
+  Church,
+  Calendar,
+  Clock,
+} from "lucide-react";
 
 const validGuests = [
   { name: "Gladys Ambrocio", guests: 3 },
@@ -404,6 +413,19 @@ export default function QuinceaneraInvitation() {
           </div>
 
           <div
+            className="flex justify-center animate-fade-in-up"
+            style={{ animationDelay: "0.05s" }}
+          >
+            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-emerald-500 shadow-xl">
+              <img
+                src="images/image_2.jpeg"
+                alt="Fatima Daniela"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div
             className="bg-gradient-to-br from-emerald-50/80 via-green-50/80 to-teal-50/80 border border-emerald-200 rounded-xl p-6 md:p-8 space-y-4 animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}
           >
@@ -448,6 +470,112 @@ export default function QuinceaneraInvitation() {
             </div>
           </div>
 
+          <div
+            className="space-y-6 animate-fade-in-up"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <div className="flex justify-center items-center gap-4">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent via-emerald-500 to-green-500" />
+              <Calendar className="w-8 h-8 text-emerald-600" />
+              <h3 className="text-2xl md:text-3xl font-serif text-emerald-700">
+                Detalles del Evento
+              </h3>
+              <Calendar className="w-8 h-8 text-emerald-600" />
+              <div className="h-px w-12 bg-gradient-to-l from-transparent via-green-500 to-emerald-500" />
+            </div>
+
+            <div className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border-2 border-emerald-300 rounded-xl p-6 md:p-8 space-y-4">
+              <div className="flex justify-center">
+                <Church className="w-12 h-12 text-emerald-600" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-serif text-emerald-700 font-semibold">
+                Ceremonia Religiosa
+              </h4>
+
+              <div className="space-y-3 text-left max-w-md mx-auto">
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-emerald-700">Hora:</p>
+                    <p className="text-foreground/90">3:15 PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-emerald-700">Lugar:</p>
+                    <p className="text-foreground/90">
+                      Parroquia San Miguel Arcángel
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      1ª. Calle 1-91, Zona 1, San Miguel Petapa
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Button
+                asChild
+                className="w-full md:w-auto bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <a
+                  href="https://maps.app.goo.gl/ZzjRFWq6Pds1MKKU6?g_st=aw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Ver en Waze
+                </a>
+              </Button>
+            </div>
+
+            <div className="bg-gradient-to-br from-teal-50 via-emerald-50 to-green-50 border-2 border-teal-300 rounded-xl p-6 md:p-8 space-y-4">
+              <div className="flex justify-center">
+                <Sparkles className="w-12 h-12 text-teal-600" />
+              </div>
+              <h4 className="text-xl md:text-2xl font-serif text-teal-700 font-semibold">
+                Recepción
+              </h4>
+
+              <div className="space-y-3 text-left max-w-md mx-auto">
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-teal-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-teal-700">Hora:</p>
+                    <p className="text-foreground/90">5:30 PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-teal-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-teal-700">Lugar:</p>
+                    <p className="text-foreground/90">El Viejo Roble</p>
+                    <p className="text-sm text-muted-foreground">
+                      Lote 24 manzana C, Residenciales San Miguel, Zona 10, San
+                      Miguel Petapa
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Button
+                asChild
+                className="w-full md:w-auto bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <a
+                  href="https://maps.app.goo.gl/pCAUdrzZXMzXRLSj8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Ver en Google Maps
+                </a>
+              </Button>
+            </div>
+          </div>
+
           <div className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border-2 border-primary/40 rounded-xl p-6 md:p-8 space-y-3 relative overflow-hidden">
             <div className="flex justify-center relative z-10">
               <Sparkles className="w-8 h-8 text-secondary animate-wiggle" />
@@ -476,31 +604,12 @@ export default function QuinceaneraInvitation() {
           </div>
 
           <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in-up"
+            className="animate-fade-in-up"
             style={{ animationDelay: "0.6s" }}
           >
             <Button
               asChild
-              className="h-auto py-4 px-6 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <a
-                href="https://maps.app.goo.gl/pCAUdrzZXMzXRLSj8"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MapPin className="w-5 h-5 mr-2" />
-                <div className="text-left">
-                  <div className="text-sm font-semibold">Ver Ubicación</div>
-                  <div className="text-xs opacity-90">
-                    Cómo llegar al evento
-                  </div>
-                </div>
-              </a>
-            </Button>
-
-            <Button
-              asChild
-              className="h-auto py-4 px-6 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="w-full h-auto py-4 px-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <a
                 href="https://wa.me/50248797502"
@@ -509,7 +618,7 @@ export default function QuinceaneraInvitation() {
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 <div className="text-left">
-                  <div className="text-sm font-semibold">
+                  <div className="text-base font-semibold">
                     Confirmar Asistencia
                   </div>
                   <div className="text-xs opacity-90">
@@ -522,7 +631,7 @@ export default function QuinceaneraInvitation() {
 
           <div
             className="space-y-4 animate-fade-in-up"
-            style={{ animationDelay: "0.5s" }}
+            style={{ animationDelay: "0.7s" }}
           >
             <p className="text-base md:text-lg text-foreground/80 italic text-pretty">
               "Los momentos más hermosos de la vida son aquellos que compartimos
