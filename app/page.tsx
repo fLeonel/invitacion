@@ -74,6 +74,130 @@ const validGuests = [
   { name: "Adelsa Ambrocio", guests: 1 },
 ];
 
+const Butterfly = ({
+  color,
+  size = 24,
+  className = "",
+}: {
+  color: string;
+  size?: number;
+  className?: string;
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M12 4C12 4 10 6 10 8C10 10 11 11 12 11C13 11 14 10 14 8C14 6 12 4 12 4Z"
+      fill={color}
+      opacity="0.8"
+    />
+    <ellipse
+      cx="7"
+      cy="10"
+      rx="4"
+      ry="6"
+      fill={color}
+      opacity="0.9"
+      transform="rotate(-20 7 10)"
+    />
+    <ellipse
+      cx="17"
+      cy="10"
+      rx="4"
+      ry="6"
+      fill={color}
+      opacity="0.9"
+      transform="rotate(20 17 10)"
+    />
+    <ellipse
+      cx="6"
+      cy="16"
+      rx="3.5"
+      ry="5"
+      fill={color}
+      opacity="0.8"
+      transform="rotate(-30 6 16)"
+    />
+    <ellipse
+      cx="18"
+      cy="16"
+      rx="3.5"
+      ry="5"
+      fill={color}
+      opacity="0.8"
+      transform="rotate(30 18 16)"
+    />
+    <circle cx="7" cy="9" r="1.5" fill="white" opacity="0.6" />
+    <circle cx="17" cy="9" r="1.5" fill="white" opacity="0.6" />
+  </svg>
+);
+
+const Flower = ({
+  color,
+  size = 24,
+  className = "",
+}: {
+  color: string;
+  size?: number;
+  className?: string;
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <circle cx="12" cy="12" r="2" fill={color} opacity="0.9" />
+    <ellipse cx="12" cy="7" rx="2.5" ry="4" fill={color} opacity="0.7" />
+    <ellipse cx="12" cy="17" rx="2.5" ry="4" fill={color} opacity="0.7" />
+    <ellipse cx="7" cy="12" rx="4" ry="2.5" fill={color} opacity="0.7" />
+    <ellipse cx="17" cy="12" rx="4" ry="2.5" fill={color} opacity="0.7" />
+    <ellipse
+      cx="8.5"
+      cy="8.5"
+      rx="3"
+      ry="2.5"
+      fill={color}
+      opacity="0.6"
+      transform="rotate(-45 8.5 8.5)"
+    />
+    <ellipse
+      cx="15.5"
+      cy="8.5"
+      rx="3"
+      ry="2.5"
+      fill={color}
+      opacity="0.6"
+      transform="rotate(45 15.5 8.5)"
+    />
+    <ellipse
+      cx="8.5"
+      cy="15.5"
+      rx="3"
+      ry="2.5"
+      fill={color}
+      opacity="0.6"
+      transform="rotate(45 8.5 15.5)"
+    />
+    <ellipse
+      cx="15.5"
+      cy="15.5"
+      rx="3"
+      ry="2.5"
+      fill={color}
+      opacity="0.6"
+      transform="rotate(-45 15.5 15.5)"
+    />
+  </svg>
+);
+
 export default function QuinceaneraInvitation() {
   const [guestName, setGuestName] = useState("");
   const [guestCount, setGuestCount] = useState(2);
@@ -119,9 +243,9 @@ export default function QuinceaneraInvitation() {
             style={{ animationDelay: "4s" }}
           />
 
-          <Star className="absolute top-20 left-1/4 w-6 h-6 text-teal-400 fill-teal-400 animate-sparkle" />
+          <Star className="absolute top-20 left-10 w-8 h-8 text-teal-400 fill-teal-400 animate-sparkle" />
           <Star
-            className="absolute top-1/4 right-1/3 w-5 h-5 text-emerald-400 fill-emerald-400 animate-wiggle"
+            className="absolute top-1/4 right-1/3 w-6 h-6 text-emerald-400 fill-emerald-400 animate-wiggle"
             style={{ animationDelay: "0.5s" }}
           />
           <Star
@@ -137,6 +261,39 @@ export default function QuinceaneraInvitation() {
             className="absolute bottom-40 left-20 w-6 h-6 text-green-500 fill-green-500 animate-pulse-glow"
             style={{ animationDelay: "2.5s" }}
           />
+
+          <div
+            className="absolute top-20 left-1/4 animate-butterfly-fly-1"
+            style={{ animationDelay: "0s" }}
+          >
+            <div className="animate-butterfly-flutter">
+              <Butterfly color="#FFD700" size={32} />
+            </div>
+          </div>
+          <div
+            className="absolute top-1/3 right-1/4 animate-butterfly-fly-2"
+            style={{ animationDelay: "2s" }}
+          >
+            <div className="animate-butterfly-flutter">
+              <Butterfly color="#10b981" size={28} />
+            </div>
+          </div>
+          <div
+            className="absolute bottom-1/4 left-1/3 animate-butterfly-fly-3"
+            style={{ animationDelay: "4s" }}
+          >
+            <div className="animate-butterfly-flutter">
+              <Butterfly color="#FFA500" size={30} />
+            </div>
+          </div>
+          <div
+            className="absolute top-1/2 right-1/3 animate-butterfly-fly-1"
+            style={{ animationDelay: "6s" }}
+          >
+            <div className="animate-butterfly-flutter">
+              <Butterfly color="#14b8a6" size={26} />
+            </div>
+          </div>
         </div>
 
         <Card className="w-full max-w-md p-8 md:p-12 shadow-2xl border-2 border-primary/40 relative z-10 bg-white/95 backdrop-blur-sm animate-fade-in-up">
@@ -356,7 +513,7 @@ export default function QuinceaneraInvitation() {
           style={{ animationDelay: "2.5s" }}
         />
         <Star
-          className="absolute top-1/2 right-1/4 w-6 h-6 text-teal-500 fill-teal-500 animate-float"
+          className="absolute top-1/2 right-1/4 w-6 h-6 text-teal-400 fill-teal-400 animate-float"
           style={{ animationDelay: "3.5s" }}
         />
 
@@ -395,12 +552,85 @@ export default function QuinceaneraInvitation() {
         />
       </div>
 
-      <Card className="w-full max-w-2xl p-8 md:p-16 shadow-2xl border-2 border-primary/40 relative z-10 bg-white/95 backdrop-blur-sm animate-fade-in-up">
+      <Card className="w-full max-w-2xl p-8 md:p-16 shadow-2xl border-2 border-primary/40 relative z-10 bg-white/95 backdrop-blur-sm animate-fade-in-up overflow-hidden">
+        {/* Mariposas sutiles dentro del contenedor */}
+        <div
+          className="absolute top-4 left-4 animate-butterfly-fly-1 opacity-40"
+          style={{ animationDelay: "0s" }}
+        >
+          <div className="animate-butterfly-flutter">
+            <Butterfly color="#FFD700" size={20} />
+          </div>
+        </div>
+        <div
+          className="absolute top-8 right-8 animate-butterfly-fly-2 opacity-35"
+          style={{ animationDelay: "2s" }}
+        >
+          <div className="animate-butterfly-flutter">
+            <Butterfly color="#1d3a22" size={18} />
+          </div>
+        </div>
+        <div
+          className="absolute bottom-12 left-12 animate-butterfly-fly-3 opacity-40"
+          style={{ animationDelay: "4s" }}
+        >
+          <div className="animate-butterfly-flutter">
+            <Butterfly color="#FFA500" size={22} />
+          </div>
+        </div>
+        <div
+          className="absolute bottom-8 right-12 animate-butterfly-fly-1 opacity-35"
+          style={{ animationDelay: "6s" }}
+        >
+          <div className="animate-butterfly-flutter">
+            <Butterfly color="#10b981" size={19} />
+          </div>
+        </div>
+
+        {/* Flores sutiles dentro del contenedor */}
+        <div
+          className="absolute top-12 right-4 animate-float opacity-30"
+          style={{ animationDelay: "1s" }}
+        >
+          <Flower color="#FFD700" size={24} />
+        </div>
+        <div
+          className="absolute top-20 left-8 animate-wiggle opacity-25"
+          style={{ animationDelay: "2s" }}
+        >
+          <Flower color="#152918" size={20} />
+        </div>
+        <div
+          className="absolute bottom-20 right-6 animate-bounce-slow opacity-30"
+          style={{ animationDelay: "3s" }}
+        >
+          <Flower color="#FFA500" size={22} />
+        </div>
+        <div
+          className="absolute bottom-32 left-6 animate-pulse-glow opacity-25"
+          style={{ animationDelay: "4s" }}
+        >
+          <Flower color="#1d3a22" size={26} />
+        </div>
+        <div
+          className="absolute top-1/3 right-2 animate-float opacity-20"
+          style={{ animationDelay: "5s" }}
+        >
+          <Flower color="#FFD700" size={18} />
+        </div>
+        <div
+          className="absolute top-2/3 left-4 animate-wiggle opacity-25"
+          style={{ animationDelay: "6s" }}
+        >
+          <Flower color="#264b2c" size={20} />
+        </div>
+
         <div className="space-y-8 text-center relative z-10">
-          <div className="flex justify-center items-center gap-4 animate-slide-in-left">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent via-emerald-500 to-green-500" />
-            <Heart className="w-12 h-12 text-primary fill-primary animate-pulse-glow" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent via-green-500 to-emerald-500" />
+          <div className="flex justify-center mb-4">
+            <div className="relative">
+              <Heart className="w-16 h-16 text-primary fill-primary animate-pulse-glow" />
+              <Sparkles className="w-6 h-6 text-secondary absolute -top-2 -right-2 animate-sparkle" />
+            </div>
           </div>
 
           <div className="space-y-2 animate-fade-in-up">
@@ -413,12 +643,27 @@ export default function QuinceaneraInvitation() {
           </div>
 
           <div
-            className="flex justify-center animate-fade-in-up"
+            className="space-y-2 animate-fade-in-up"
             style={{ animationDelay: "0.05s" }}
+          >
+            <div className="flex justify-center items-center gap-3">
+              <Calendar className="w-8 h-8 text-emerald-600" />
+              <div className="text-center">
+                <p className="text-4xl md:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-600 font-bold">
+                  Sábado 8 de Noviembre
+                </p>
+              </div>
+              <Calendar className="w-8 h-8 text-emerald-600" />
+            </div>
+          </div>
+
+          <div
+            className="flex justify-center animate-fade-in-up"
+            style={{ animationDelay: "0.1s" }}
           >
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-emerald-500 shadow-xl">
               <img
-                src="images/image_2.jpeg"
+                src="/images/image_6.jpeg"
                 alt="Fatima Daniela"
                 className="w-full h-full object-cover"
               />
@@ -427,7 +672,7 @@ export default function QuinceaneraInvitation() {
 
           <div
             className="bg-gradient-to-br from-emerald-50/80 via-green-50/80 to-teal-50/80 border border-emerald-200 rounded-xl p-6 md:p-8 space-y-4 animate-fade-in-up"
-            style={{ animationDelay: "0.1s" }}
+            style={{ animationDelay: "0.15s" }}
           >
             <p className="text-base md:text-lg text-foreground/90 leading-relaxed text-pretty italic">
               Agradezco a Dios por cada bendición en mi vida, a mi familia por
@@ -463,9 +708,9 @@ export default function QuinceaneraInvitation() {
                 className="text-pretty animate-fade-in-up"
                 style={{ animationDelay: "0.4s" }}
               >
-                Tu presencia haría este día aún más mágico e inolvidable. Sería
-                un honor tenerte a mi lado en esta celebración que marca el
-                inicio de una nueva etapa llena de sueños y esperanzas.
+                Tu presencia hará este día aún más mágico e inolvidable. Será un
+                honor tenerte a mi lado en esta celebración que marca el inicio
+                de una nueva etapa llena de sueños y esperanzas.
               </p>
             </div>
           </div>
@@ -576,13 +821,47 @@ export default function QuinceaneraInvitation() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border-2 border-primary/40 rounded-xl p-6 md:p-8 space-y-3 relative overflow-hidden">
+          <div
+            className="bg-white border-2 border-emerald-300 rounded-xl p-6 md:p-8 space-y-4 animate-fade-in-up"
+            style={{ animationDelay: "0.55s" }}
+          >
+            <div className="flex justify-center">
+              <Sparkles className="w-10 h-10 text-emerald-600 animate-wiggle" />
+            </div>
+            <h4 className="text-2xl md:text-3xl font-serif text-emerald-700 font-semibold">
+              Dress Code: Gala con Estilo
+            </h4>
+
+            <div className="space-y-3 text-base md:text-lg text-foreground/90 leading-relaxed">
+              <p className="text-pretty">
+                Ven impecable: las damas en{" "}
+                <span className="font-semibold text-emerald-700">
+                  vestido de noche
+                </span>
+                ; los caballeros en{" "}
+                <span className="font-semibold text-emerald-700">
+                  traje oscuro
+                </span>{" "}
+                (esmoquin bienvenido si quieren robar miradas).
+              </p>
+
+              <p className="text-pretty italic text-emerald-600 font-medium">
+                Un favorcito: eviten el verde — la cumpleañera se lo tomó
+                personal. 😉
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="bg-white border-2 border-emerald-300 rounded-xl p-6 md:p-8 space-y-3 relative overflow-hidden animate-fade-in-up"
+            style={{ animationDelay: "0.6s" }}
+          >
             <div className="flex justify-center relative z-10">
-              <Sparkles className="w-8 h-8 text-secondary animate-wiggle" />
+              <Sparkles className="w-8 h-8 text-emerald-600 animate-wiggle" />
             </div>
             {guestCount === 0 ? (
               <p className="text-lg md:text-xl text-foreground relative z-10 font-medium">
-                Esta invitación es{" "}
+                Invitación válida{" "}
                 <span className="text-emerald-600 font-semibold">
                   solo para ti 🫶
                 </span>
@@ -590,11 +869,11 @@ export default function QuinceaneraInvitation() {
             ) : (
               <>
                 <p className="text-lg md:text-xl text-foreground relative z-10">
-                  Puedes asistir con{" "}
+                  Invitación válida para{" "}
                   <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600 text-2xl md:text-3xl">
                     {guestCount}
                   </span>{" "}
-                  {guestCount === 1 ? "invitado" : "invitados"}
+                  {guestCount === 1 ? "persona" : "personas"}
                 </p>
                 <p className="text-sm text-muted-foreground relative z-10">
                   Esperamos contar con tu confirmación
@@ -605,7 +884,7 @@ export default function QuinceaneraInvitation() {
 
           <div
             className="animate-fade-in-up"
-            style={{ animationDelay: "0.6s" }}
+            style={{ animationDelay: "0.65s" }}
           >
             <Button
               asChild
@@ -638,9 +917,12 @@ export default function QuinceaneraInvitation() {
               con las personas que amamos"
             </p>
 
-            <div className="flex justify-center items-center gap-2 text-primary">
+            <div className="flex flex-col justify-center items-center gap-2 text-primary">
               <Heart className="w-5 h-5 fill-current animate-pulse-glow" />
               <span className="text-lg font-medium">Con cariño</span>
+              <span className="text-lg font-serif">
+                Familia Ronquillo Ambrocio
+              </span>
               <Heart
                 className="w-5 h-5 fill-current animate-pulse-glow"
                 style={{ animationDelay: "0.5s" }}
