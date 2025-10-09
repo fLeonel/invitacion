@@ -35,7 +35,7 @@ const validGuests = [
   { name: "Oracio Rosales", guests: 2 },
   { name: "Darío Pérez", guests: 4 },
   { name: "David Rosales", guests: 5 },
-  { name: "Yessenia Ronquillo", guests: 4 },
+  { name: "Kevin Casiano", guests: 4 },
   { name: "Adelaido Ambrocio", guests: 1 },
   { name: "Nery Ronquillo", guests: 1 },
   { name: "Angela Ramón", guests: 5 },
