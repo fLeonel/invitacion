@@ -57,7 +57,7 @@ const validGuests = [
   { name: "Yessica Velásquez", guests: 2 },
   { name: "Deyler García", guests: 2 },
   { name: "Fernando Rodas", guests: 1 },
-  { name: "Dennis Ramírez", guests: 1 },
+  { name: "Dennis Ramirez", guests: 2 },
   { name: "Selena Chipix", guests: 2 },
   { name: "Heidy Castillo", guests: 3 },
   { name: "Maritza Najera", guests: 2 },
