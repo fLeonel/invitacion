@@ -74,7 +74,7 @@ const validGuests = [
   { name: "Gustavo Ambrocio", guests: 4 },
   { name: "Adelsa Ambrocio", guests: 2 },
   { name: "Marlon Ramírez", guests: 1 },
-  { name: "Rosario Ambrocio", guests: 3 },
+  { name: "Rosario Ambrocio", guests: 2 },
 ];
 
 const Butterfly = ({
